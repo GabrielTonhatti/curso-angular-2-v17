@@ -16,57 +16,20 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent
-  implements
-    OnInit,
-    OnChanges,
-    DoCheck,
-    OnDestroy,
-    AfterContentInit,
-    AfterViewInit,
-    AfterContentChecked,
-    AfterViewChecked
-{
-  title = 'projeto1';
+export class AppComponent {
+  title: string = 'Angular';
+  imgUrl: string =
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png';
 
-  constructor() {
-    console.log('Componente construtor');
+  constructor() {}
+
+  chamarFuncao(): void {
+    console.log('Esse é um click');
   }
 
-  ngAfterContentChecked(): void {
-    console.log('Componente AfterContentChecked');
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('Componente AfterViewChecked');
-  }
-
-  ngAfterViewInit(): void {
-    console.log('Componente AfterViewInit');
-  }
-
-  ngOnDestroy(): void {
-    console.log('Componente OnDestroy');
-  }
-
-  ngAfterContentInit(): void {
-    console.log('Componente AfterContentInit');
-  }
-
-  ngDoCheck(): void {
-    console.log('Componente DoCheck');
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('Componente OnChanges');
-  }
-
-  ngOnInit(): void {
-    console.log('Componente OnInit');
-    this.title = 'Novo título';
-  }
-
-  mudarTexto(): void {
-    this.title += 'a';
-  }
+  // 4 Tipos de data Binding
+  // 1 - Interpolation (Interpolação) - {{ title }}
+  // 2 - Property Binding (Vinculação de Propriedade) - <img [src]="imgUrl">
+  // 3 - Event Binding (Vinculação de Evento) - <button (click)="onClick($event)"> | <button (click)="chamarFuncao()">
+  // 4 - Two-way Data Binding (Vinculação de Dados de Duas Vias) - [(ngModel)]="title" - <input [(ngModel)]="title" />
 }

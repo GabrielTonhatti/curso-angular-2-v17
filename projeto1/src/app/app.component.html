@@ -1,5 +1,9 @@
-<h1>Bem vindo ao treinamento de Angular {{ title }}</h1>
+<h1>{{ title }}</h1>
 
-<button (click)="mudarTexto()">Mudar Texto</button>
+<button (click)="chamarFuncao()">Chamar Evento</button>
+
+<img [src]="imgUrl" height="200" />
+
+<input [(ngModel)]="title" />
 
 <router-outlet></router-outlet>
