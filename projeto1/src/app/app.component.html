@@ -1,9 +1,7 @@
-<h1>{{ title }}</h1>
-
-<button (click)="chamarFuncao()">Chamar Evento</button>
-
-<img [src]="imgUrl" height="200" />
-
-<input [(ngModel)]="title" />
+<span [ngSwitch]="title">
+  <p *ngSwitchCase="'Olá'">Esse é um parágrafo verdadeiro.</p>
+  <p *ngSwitchCase="false">Esse é um parágrafo falso.</p>
+  <p *ngSwitchDefault>Esse é um parágrafo default.</p>
+</span>
 
 <router-outlet></router-outlet>
