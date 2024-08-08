@@ -11,7 +11,7 @@
   <tbody>
     <tr *ngFor="let cliente of clientes">
       <td>{{ cliente.nome | uppercase }}</td>
-      <td>{{ cliente.sexo | lowercase }}</td>
+      <td>{{ cliente.sexo | sexo }}</td>
       <td>{{ cliente.idade }}</td>
       <td>{{ cliente.salario | currency : "BRL" }}</td>
     </tr>
