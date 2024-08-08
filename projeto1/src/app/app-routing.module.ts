@@ -17,6 +17,12 @@ const routes: Routes = [
     path: 'novo',
     component: NovoComponent,
   },
+  {
+    path: 'produto',
+    // Lazy loading
+    loadChildren: () =>
+      import('./features/produto/produto.module').then((m) => m.ProdutoModule),
+  },
 ];
 
 @NgModule({
