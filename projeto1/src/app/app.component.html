@@ -1,7 +1,19 @@
-<span [ngSwitch]="title">
-  <p *ngSwitchCase="'Olá'">Esse é um parágrafo verdadeiro.</p>
-  <p *ngSwitchCase="false">Esse é um parágrafo falso.</p>
-  <p *ngSwitchDefault>Esse é um parágrafo default.</p>
-</span>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sexo</th>
+      <th>Idade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.sexo }}</td>
+      <td>{{ cliente.idade }}</td>
+    </tr>
+  </tbody>
+</table>
 
 <router-outlet></router-outlet>

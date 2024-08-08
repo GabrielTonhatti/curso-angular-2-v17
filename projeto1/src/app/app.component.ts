@@ -34,8 +34,38 @@ import {
 })
 export class AppComponent {
   title: string = 'Olá';
-  imgUrl: string =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png';
+  clientes = [
+    {
+      nome: 'Alexandre',
+      sexo: 'Masculino',
+      idade: 20,
+    },
+    {
+      nome: 'Roberto',
+      sexo: 'Masculino',
+      idade: 33,
+    },
+    {
+      nome: 'Maura',
+      sexo: 'Feminino',
+      idade: 23,
+    },
+    {
+      nome: 'Claúdia',
+      sexo: 'Feminino',
+      idade: 22,
+    },
+  ];
 
   constructor() {}
+
+  /**
+   * Diretivas Estruturais
+   * 1 - ngFor - Itera sobre uma lista de elementos:
+   *  <tr *ngFor="let cliente of clientes">
+   *    <td>{{ cliente.nome }}</td>
+   *    <td>{{ cliente.sexo }}</td>
+   *    <td>{{ cliente.idade }}</td>
+   *  </tr>
+   */
 }
