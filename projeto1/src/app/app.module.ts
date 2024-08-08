@@ -8,10 +8,26 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 import { NovoComponent } from './componentes/novo/novo.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, SexoPipe, ToolbarComponent, NovoComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [
+    AppComponent,
+    SexoPipe,
+    ToolbarComponent,
+    NovoComponent,
+    HomeComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
