@@ -27,6 +27,30 @@ import {
  * </span>
  */
 
+/**
+ * Diretivas Estruturais
+ * 1 - ngFor - Itera sobre uma lista de elementos:
+ *  <tr *ngFor="let cliente of clientes">
+ *    <td>{{ cliente.nome }}</td>
+ *    <td>{{ cliente.sexo }}</td>
+ *    <td>{{ cliente.idade }}</td>
+ *  </tr>
+ */
+
+/**
+ * Pipes
+ * 1 - uppercase - Transforma o texto em maiúsculo. - {{ cliente.nome | uppercase }}
+ * 2 - lowercase - Transforma o texto em minúsculo. - {{ cliente.nome | lowercase }}
+ * 3 - currency - Formata um número para moeda. - {{ cliente.salario | currency : "BRL" }}
+ * 4 - date - Formata uma data. - {{ cliente.dataNascimento | date : "dd/MM/yyyy" }}
+ * 5 - json - Formata um objeto para JSON. - {{ cliente | json }}
+ * 6 - slice - Corta um texto. - {{ cliente.nome | slice : 0 : 3 }}
+ * 7 - async - Trabalha com observables. - {{ cliente | async }}
+ * 8 - percent - Formata um número para porcentagem. - {{ cliente.salario | percent }}
+ * 9 - number - Formata um número. - {{ cliente.salario | number : "1.2-2" }}
+ * 10 - decimal - Formata um número para decimal. - {{ cliente.salario | decimal : "1.2-2" }}
+ */
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -39,33 +63,27 @@ export class AppComponent {
       nome: 'Alexandre',
       sexo: 'Masculino',
       idade: 20,
+      salario: 1000,
     },
     {
       nome: 'Roberto',
       sexo: 'Masculino',
       idade: 33,
+      salario: 11000,
     },
     {
       nome: 'Maura',
       sexo: 'Feminino',
       idade: 23,
+      salario: 12000,
     },
     {
       nome: 'Claúdia',
       sexo: 'Feminino',
       idade: 22,
+      salario: 13000,
     },
   ];
 
   constructor() {}
-
-  /**
-   * Diretivas Estruturais
-   * 1 - ngFor - Itera sobre uma lista de elementos:
-   *  <tr *ngFor="let cliente of clientes">
-   *    <td>{{ cliente.nome }}</td>
-   *    <td>{{ cliente.sexo }}</td>
-   *    <td>{{ cliente.idade }}</td>
-   *  </tr>
-   */
 }
