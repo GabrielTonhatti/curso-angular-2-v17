@@ -1,21 +1,26 @@
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Sexo</th>
-      <th>Idade</th>
-      <th>Salário</th>
-    </tr>
-  </thead>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let cliente">{{ cliente.nome | uppercase }}</td>
+  </ng-container>
 
-  <tbody>
-    <tr *ngFor="let cliente of clientes">
-      <td>{{ cliente.nome | uppercase }}</td>
-      <td>{{ cliente.sexo | sexo }}</td>
-      <td>{{ cliente.idade }}</td>
-      <td>{{ cliente.salario | currency : "BRL" }}</td>
-    </tr>
-  </tbody>
+  <ng-container matColumnDef="sexo">
+    <th mat-header-cell *matHeaderCellDef>Sexo</th>
+    <td mat-cell *matCellDef="let cliente">{{ cliente.sexo | sexo }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="idade">
+    <th mat-header-cell *matHeaderCellDef>Idade</th>
+    <td mat-cell *matCellDef="let cliente">{{ cliente.idade }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="salario">
+    <th mat-header-cell *matHeaderCellDef>Salário</th>
+    <td mat-cell *matCellDef="let cliente">
+      {{ cliente.salario | currency : "BRL" }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
-
-<span>{{ clientes | json }}</span>

@@ -1,4 +1,15 @@
 import { Component } from '@angular/core';
+import {
+  MatTableDataSource,
+  MatTableDataSourcePaginator,
+} from '@angular/material/table';
+
+export interface Pessoa {
+  nome: string;
+  sexo: string;
+  idade: number;
+  salario: number;
+}
 
 @Component({
   selector: 'app-home',
@@ -6,12 +17,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  clientes = [
+  displayedColumns: Array<string> = ['nome', 'sexo', 'idade', 'salario'];
+  clientes: Array<Pessoa> = [
     {
       nome: 'Alexandre',
       sexo: 'm',
       idade: 20,
-      salario: 1000,
+      salario: 10000,
     },
     {
       nome: 'Roberto',
@@ -32,4 +44,9 @@ export class HomeComponent {
       salario: 13000,
     },
   ];
+  dataSource!: MatTableDataSource<Pessoa, MatTableDataSourcePaginator>;
+
+  ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.clientes);
+  }
 }
